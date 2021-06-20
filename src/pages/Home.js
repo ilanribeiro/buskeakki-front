@@ -6,7 +6,7 @@ import SearchBox from '../components/SearchBox';
 function Home() {
   return (
   <div>
-    <Header />
+    <Header title='Buskeakki'/>
     <SearchBox />
     <ProductCard />
   </div>
