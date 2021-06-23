@@ -1,11 +1,12 @@
 import Routes from './routes';
+import Provider from './context/Provider';
 import './App.css';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
+    <Provider>
       <Routes />
-    </div>
+    </Provider>
   );
 }
 
