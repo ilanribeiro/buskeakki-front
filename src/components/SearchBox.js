@@ -28,8 +28,9 @@ function SearchBox() {
     }
     // se não existir, fazer requisição para API
     const productResults = await switchAPI(web, category, searchTerm);
+    console.log(`productResults no searchBox: `, productResults);
     // alimentar results com retorno da API
-    setResults(productResults);
+    await setResults(productResults);
   };
 
   return (
