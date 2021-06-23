@@ -1,11 +1,15 @@
+import env from "react-dotenv";
+
 export const numberFormat = (value) =>
-new Intl.NumberFormat('pt-BR', {
-  style: 'currency',
-  currency: 'BRL'
-}).format(value);
+  new Intl.NumberFormat('pt-BR', {
+    style: 'currency',
+    currency: 'BRL'
+  }).format(value);
+
+const BASE_URL_API = env.REACT_APP_LINK_API;
 
 export const saveFilter = async (web, category, searchTerm, results) => {
-  const BASE_URL_API = process.env.REACT_APP_LINK_API;
+  // const BASE_URL_API = process.env.REACT_APP_LINK_API;
 
   const requestOptions = {
     method: 'POST',
@@ -19,7 +23,7 @@ export const saveFilter = async (web, category, searchTerm, results) => {
 };
 
 export const checkFilter = async (web, category, searchTerm) => {
-  const BASE_URL_API = process.env.REACT_APP_LINK_API;
+  // const BASE_URL_API = process.env.REACT_APP_LINK_API;
 
   const requestOptions = {
     method: 'POST',
