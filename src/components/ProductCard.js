@@ -1,17 +1,18 @@
 import React, { useContext } from 'react';
-import { Card, Icon, Image, Container } from 'semantic-ui-react';
 import Context from '../context/Context';
+import { numberFormat } from '../services/helpers';
+import { Card, Icon, Image, Container } from 'semantic-ui-react';
 
 import './Components.css';
 
 function ProductCard() {
   const { results, web, category } = useContext(Context);
 
-  const numberFormat = (value) =>
-  new Intl.NumberFormat('pt-BR', {
-    style: 'currency',
-    currency: 'BRL'
-  }).format(value);
+  // const numberFormat = (value) =>
+  // new Intl.NumberFormat('pt-BR', {
+  //   style: 'currency',
+  //   currency: 'BRL'
+  // }).format(value);
 
   return (
     <Container fluid className="card-container">
@@ -31,7 +32,6 @@ function ProductCard() {
               ui={ true }
               size="small"
               centered
-              // as = 'a'
             />
 
             <Card.Content>

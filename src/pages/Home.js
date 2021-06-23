@@ -10,7 +10,6 @@ const Home = () => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    console.log(`results no Home: `, results)
     const emptyResults = results.length === 0;
 
     if (!emptyResults) {

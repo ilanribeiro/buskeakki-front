@@ -4,7 +4,6 @@ const BASE_URL_ML = 'https://api.mercadolibre.com/sites/MLB/search?q=';
 const BASE_URL_BSCP = env.REACT_APP_LINK_API_BUSCAPE;
 
 const switchAPI = async (web, category, searchTerm) => {
-  console.log('cheguei no switchAPI')
   let results = [];
 
   if (web === 'Mercado Livre') {
@@ -14,7 +13,6 @@ const switchAPI = async (web, category, searchTerm) => {
   }
 
   if (web === 'Buscapé') {
-    console.log('BASE_URL_BSCP', BASE_URL_BSCP)
     const requestOptions = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -26,7 +24,6 @@ const switchAPI = async (web, category, searchTerm) => {
       .then((data) => data)
   }
 
-  console.log(`results no switchAPI: `, results)
   return results;
 };
 
