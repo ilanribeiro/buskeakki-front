@@ -3,6 +3,7 @@ import Context from '../context/Context';
 import { Dropdown, Icon, Input, Container } from 'semantic-ui-react';
 import { stateAPIs, stateCategories } from '../services/seeds';
 import switchAPI from '../services/api';
+import { checkFilter } from '../services/helpers';
 
 import './Components.css';
 
@@ -18,7 +19,16 @@ function SearchBox() {
  } = useContext(Context);
 
   const handleFilter = async (web, category, searchTerm) => {
+    // verificar se existe filtro salvo
+    const filterResults = await checkFilter(web, category, searchTerm);
+    // se existir, alimentar results com retorno do banco
+    if (filterResults) {
+      console.log('filter não vazio', filterResults)
+      return setResults(filterResults)
+    }
+    // se não existir, fazer requisição para API
     const productResults = await switchAPI(web, category, searchTerm);
+    // alimentar results com retorno da API
     setResults(productResults);
   };
 
