@@ -1,11 +1,12 @@
 import React from "react";
+import { Header } from 'semantic-ui-react';
 
-function Header({title}) {
+function TopHeader({title}) {
   return (
-    <div>
-      <h1>{ title }</h1>
+    <div className="header-container">
+      <Header textAlign="center" color="orange">{ title }</Header>
     </div>
   );
 }
 
-export default Header;
+export default TopHeader;
